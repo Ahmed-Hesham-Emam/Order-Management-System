@@ -18,9 +18,7 @@ namespace Presentation
     public class CustomerController(IServiceManager serviceManager) : ControllerBase
         {
         [HttpPost]
-        //[ProducesResponseType(StatusCodes.Status200OK, Type = typeof(UserResultDto))]
-        //[ProducesResponseType(StatusCodes.Status500InternalServerError, Type = typeof(ValidationErrorResponse))]
-        //[ProducesResponseType(StatusCodes.Status400BadRequest, Type = typeof(ValidationErrorResponse))]
+
         public async Task<IActionResult> CreateNewCustomer(CustomerRegisterDto registerDto)
             {
             var result = await serviceManager.CustomerService.CreateNewCustomerAsync(registerDto);
@@ -28,9 +26,7 @@ namespace Presentation
             }
 
         [HttpGet("{customerId}/orders")]
-        //[ProducesResponseType(StatusCodes.Status200OK, Type = typeof(UserResultDto))]
-        //[ProducesResponseType(StatusCodes.Status500InternalServerError, Type = typeof(ValidationErrorResponse))]
-        //[ProducesResponseType(StatusCodes.Status400BadRequest, Type = typeof(ValidationErrorResponse))]
+
         public async Task<IActionResult> GetCustomerOrders(Guid customerId)
             {
             var result = await serviceManager.CustomerService.GetCustomerOrders(customerId);

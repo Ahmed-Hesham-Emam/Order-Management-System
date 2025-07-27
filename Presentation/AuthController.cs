@@ -15,9 +15,7 @@ namespace Presentation
     public class AuthController(IServiceManager serviceManager) : ControllerBase
         {
         [HttpPost("login")]
-        //[ProducesResponseType(StatusCodes.Status200OK, Type = typeof(UserResultDto))]
-        //[ProducesResponseType(StatusCodes.Status500InternalServerError, Type = typeof(ValidationErrorResponse))]
-        //[ProducesResponseType(StatusCodes.Status400BadRequest, Type = typeof(ValidationErrorResponse))]
+
         public async Task<IActionResult> Login(UserLoginDto loginDto)
             {
             var result = await serviceManager.AuthService.LoginAsync(loginDto);
@@ -25,9 +23,7 @@ namespace Presentation
             }
 
         [HttpPost("register")]
-        //[ProducesResponseType(StatusCodes.Status200OK, Type = typeof(UserResultDto))]
-        //[ProducesResponseType(StatusCodes.Status500InternalServerError, Type = typeof(ValidationErrorResponse))]
-        //[ProducesResponseType(StatusCodes.Status400BadRequest, Type = typeof(ValidationErrorResponse))]
+
         public async Task<IActionResult> Register(UserRegisterDto registerDto)
             {
             var result = await serviceManager.AuthService.RegisterAsync(registerDto);

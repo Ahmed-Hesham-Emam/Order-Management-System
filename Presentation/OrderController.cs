@@ -17,9 +17,7 @@ namespace Presentation
     public class OrderController(IServiceManager serviceManager) : ControllerBase
         {
         [HttpPost]
-        //[ProducesResponseType(StatusCodes.Status200OK, Type = typeof(UserResultDto))]
-        //[ProducesResponseType(StatusCodes.Status500InternalServerError, Type = typeof(ValidationErrorResponse))]
-        //[ProducesResponseType(StatusCodes.Status400BadRequest, Type = typeof(ValidationErrorResponse))]
+
         public async Task<IActionResult> CreateNewOrder(OrdersDto ordersDto)
             {
             var result = await serviceManager.OrderService.CreateOrder(ordersDto);
@@ -27,8 +25,7 @@ namespace Presentation
             }
 
         [HttpGet("{orderId:guid}")]
-        //[ProducesResponseType(StatusCodes.Status200OK, Type = typeof(OrdersDto))]
-        //[ProducesResponseType(StatusCodes.Status404NotFound)]
+
         public async Task<IActionResult> GetOrderById(Guid orderId)
             {
             var order = await serviceManager.OrderService.GetOrderByIdAsync(orderId);
@@ -41,8 +38,8 @@ namespace Presentation
 
 
         [HttpGet]
-        [Authorize(Roles = "Admin")] // restrict to admin users only
-        //[ProducesResponseType(StatusCodes.Status200OK, Type = typeof(IEnumerable<OrdersDto>))]
+        [Authorize(Roles = "Admin")]
+
         public async Task<IActionResult> GetAllOrders()
             {
             var orders = await serviceManager.OrderService.GetAllOrdersAsync();
