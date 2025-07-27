@@ -1,0 +1,27 @@
+[
+    {
+        "Name": "Wireless Mouse",
+        "Price": 299.99,
+        "Stock": 150
+    },
+    {
+        "Name": "Mechanical Keyboard",
+        "Price": 599.99,
+        "Stock": 75
+    },
+    {
+        "Name": "Gaming Headset",
+        "Price": 799.5,
+        "Stock": 60
+    },
+    {
+        "Name": "27\" Monitor",
+        "Price": 1999.0,
+        "Stock": 40
+    },
+    {
+        "Name": "Laptop Stand",
+        "Price": 250.0,
+        "Stock": 100
+    }
+]
